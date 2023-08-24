@@ -3,6 +3,7 @@ package br.com.easypdv.store.controller;
 import br.com.easypdv.store.dto.StoreCreationDTO;
 import br.com.easypdv.store.entity.Store;
 import br.com.easypdv.store.service.StoreService;
+import br.com.easypdv.store.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class StoreController {
         try{
             return ResponseEntity.ok(this.storeService.fetchStores());
         }catch(Exception e){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An internal error ocurred! Please, try again later!", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, Constants.SERVER_ERROR_MSG, e);
         }
     }
 
@@ -38,7 +39,7 @@ public class StoreController {
         }catch(NoSuchElementException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }catch(Exception e){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An internal error ocurred! Please, try again later!", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, Constants.SERVER_ERROR_MSG, e);
         }
     }
 
@@ -49,7 +50,7 @@ public class StoreController {
         }catch(IllegalArgumentException e){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
         }catch(Exception e){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An internal error ocurred! Please, try again later!", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, Constants.SERVER_ERROR_MSG, e);
         }
     }
 
@@ -62,7 +63,7 @@ public class StoreController {
         }catch(IllegalArgumentException e){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
         }catch(Exception e){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An internal error ocurred! Please, try again later!", e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, Constants.SERVER_ERROR_MSG, e);
         }
     }
 }
