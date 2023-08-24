@@ -5,7 +5,6 @@ import br.com.easypdv.store.entity.Store;
 import br.com.easypdv.store.entity.StoreBuilder;
 import br.com.easypdv.store.repository.StoreRepository;
 import br.com.easypdv.store.utils.Constants;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
