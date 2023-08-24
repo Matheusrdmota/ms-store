@@ -1,0 +1,26 @@
+name: ci-workflow
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  integration-job:
+    name: Integration Job
+    runs-on: [ubuntu-latest, ubuntu-20.04]
+    steps:
+      - uses: actions/checkout@v3 
+      - name: Setup openjdk
+        run: |
+          sudo apt update
+          sudo apt install openjdk-11-jdk
+          java -version
+      - name: Setup Maven
+        run: |
+          sudo apt install maven
+          mvn -version
+      - name: Build and test
+        run: |
+          mvn clean compile package install
+          
+  
+
