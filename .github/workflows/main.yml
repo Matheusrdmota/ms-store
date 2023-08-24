@@ -6,7 +6,7 @@ on:
 jobs:
   integration-job:
     name: Integration Job
-    runs-on: [ubuntu-latest, ubuntu-20.04]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 
       - name: Setup openjdk
